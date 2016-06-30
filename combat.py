@@ -33,9 +33,9 @@ def resetStats(entityTuning, entity, current):
 
     # Set the character's stats to what their base values would be
     component = entity.stats
-    for statName, newValue in baseStatsAtLevel:
+    for statName, baseValue in baseStatsAtLevel:
         stat = component.get(statName)
-        infusionPoints += (stat - newValue)
-        stat.set(newValue)
+        infusionPoints += (stat - baseValue)
+        stat.set(baseValue)
 
     component.grantInfusions(infusionPoints)
